@@ -1,0 +1,61 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity alu_test is
+    Port (
+        A         : in  STD_LOGIC_VECTOR(7 downto 0);
+        B         : in  STD_LOGIC_VECTOR(7 downto 0);
+        ALU_Sel   : in  STD_LOGIC_VECTOR(2 downto 0);
+        segments  : out STD_LOGIC_VECTOR(27 downto 0)  -- 4 displays x 7 segmentos
+    );
+end alu_test;
+
+architecture alu_test_arch of alu_test is
+    signal Result  : STD_LOGIC_VECTOR(7 downto 0);
+    signal NZVC    : STD_LOGIC_VECTOR(3 downto 0);
+    signal digits  : STD_LOGIC_VECTOR(15 downto 0);  -- 4 x 4 bits para 4 displays
+begin
+
+    -- Instancia de la ALU
+    ALU_Inst : entity work.ALU
+        Port map (
+            A       => A,
+            B       => B,
+            ALU_Sel => ALU_Sel,
+            Result  => Result,
+            NZVC    => NZVC
+        );
+
+    -- Separar el resultado en 4 dígitos de 4 bits cada uno
+    digits <= std_logic_vector(to_unsigned(unsigned(Result(7 downto 4)), 4)) & 
+              std_logic_vector(to_unsigned(unsigned(Result(3 downto 0)), 4)) & 
+              "0000" & 
+              "0000";  -- Llenar los dígitos menos significativos con ceros
+
+    -- Instancias de los decodificadores de 7 segmentos
+    display0 : entity work.display7seg_hex
+        Port map (
+            num      => unsigned(digits(15 downto 12)),
+            segments => segments(27 downto 21)
+        );
+
+    display1 : entity work.display7seg_hex
+        Port map (
+            num      => unsigned(digits(11 downto 8)),
+            segments => segments(20 downto 14)
+        );
+
+    display2 : entity work.display7seg_hex
+        Port map (
+            num      => unsigned(digits(7 downto 4)),
+            segments => segments(13 downto 7)
+        );
+
+    display3 : entity work.display7seg_hex
+        Port map (
+            num      => unsigned(digits(3 downto 0)),
+            segments => segments(6 downto 0)
+        );
+
+end Behavioral;

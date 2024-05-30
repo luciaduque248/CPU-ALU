@@ -15,11 +15,11 @@ end ALU;
 architecture Behavioral of ALU is
     signal Result_temp : STD_LOGIC_VECTOR(7 downto 0);
 begin
-    Result <= Result_temp;  -- Assign the internal signal to the output port
-
+   
     ALU_PROCESS : process (A, B, ALU_Sel)
     variable Sum_uns : unsigned(8 downto 0);
-    variable Sub_uns : unsigned(8 downto 0);
+	 variable Sub_uns : unsigned(8 downto 0);
+	 
     begin
         if (ALU_Sel = "000") then
             -- SUMA
@@ -48,30 +48,34 @@ begin
             NZVC(0) <= Sum_uns(8);
 
         elsif (ALU_Sel = "001") then
-            -- SUBTRACTION
+				 -- SUBTRACTION
             Sub_uns := unsigned('0' & A) - unsigned('0' & B);
-            Result_temp <= std_logic_vector(Sub_uns(7 downto 0));
+            Result <= std_logic_vector(Sub_uns(7 downto 0));
             
             -- Negative Flag (N)
-            NZVC(3) <= Result_temp(7);
+            NZVC(3) <= Sub_uns(7);
             
             -- Zero Flag (Z)
-            if (Result_temp = x"00") then
+            if (Sub_uns(7 downto 0) = x"00") then
                 NZVC(2) <= '1';
             else
                 NZVC(2) <= '0';
             end if;
             
             -- Overflow Flag (V)
-            if ((A(7) = '0' and B(7) = '1' and Result_temp(7) = '1') or
-                (A(7) = '1' and B(7) = '0' and Result_temp(7) = '0')) then
+            if ((A(7) = '0' and B(7) = '1' and Sub_uns(7) = '1') or
+                (A(7) = '1' and B(7) = '0' and Sub_uns(7) = '0')) then
                 NZVC(1) <= '1';
             else
                 NZVC(1) <= '0';
             end if;
-            
-            -- Carry Flag (C)
-            NZVC(0) <= Sub_uns(8);
+				
+				-- Carry Flag (C)
+            if unsigned(A) < unsigned(B) then
+                NZVC(0) <= '1';
+            else
+                NZVC(0) <= '0';
+            end if;
 
 		  
 		  elsif (ALU_Sel = "010") then

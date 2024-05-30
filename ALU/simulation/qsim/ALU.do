@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vlog -work work ALU.vo
-vlog -work work DiagramaDeTiempoNV.vwf.vt
+vlog -work work DiagramaDeTiempo50-120.vwf.vt
 vsim -novopt -c -t 1ps -L cycloneiii_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate work.ALU_vlg_vec_tst -voptargs="+acc"
 vcd file -direction ALU.msim.vcd
 vcd add -internal ALU_vlg_vec_tst/*

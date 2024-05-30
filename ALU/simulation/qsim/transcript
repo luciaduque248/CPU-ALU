@@ -19,8 +19,11 @@
 # Loading cycloneiii_ver.cycloneiii_io_obuf
 # Loading cycloneiii_ver.cycloneiii_io_ibuf
 # Loading cycloneiii_ver.cycloneiii_lcell_comb
+# Loading cycloneiii_ver.cycloneiii_clkctrl
+# Loading cycloneiii_ver.cycloneiii_mux41
+# Loading cycloneiii_ver.cycloneiii_ena_reg
 # Loading work.ALU_vlg_sample_tst
 # Loading work.ALU_vlg_check_tst
 # Simulation passed !
-# ** Note: $finish    : DiagramaDeTiempoNV.vwf.vt(357)
+# ** Note: $finish    : DiagramaDeTiempo50-120.vwf.vt(357)
 #    Time: 1 us  Iteration: 0  Instance: /ALU_vlg_vec_tst/tb_out
