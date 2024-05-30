@@ -1,0 +1,310 @@
+$comment
+	File created using the following command:
+		vcd file ALU.msim.vcd -direction
+$end
+$date
+	Thu May 30 15:38:16 2024
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module ALU_vlg_vec_tst $end
+$var reg 8 ! A [7:0] $end
+$var reg 3 " ALU_Sel [2:0] $end
+$var reg 8 # B [7:0] $end
+$var wire 1 $ NZVC [3] $end
+$var wire 1 % NZVC [2] $end
+$var wire 1 & NZVC [1] $end
+$var wire 1 ' NZVC [0] $end
+$var wire 1 ( Result [7] $end
+$var wire 1 ) Result [6] $end
+$var wire 1 * Result [5] $end
+$var wire 1 + Result [4] $end
+$var wire 1 , Result [3] $end
+$var wire 1 - Result [2] $end
+$var wire 1 . Result [1] $end
+$var wire 1 / Result [0] $end
+$var wire 1 0 sampler $end
+$scope module i1 $end
+$var wire 1 1 gnd $end
+$var wire 1 2 vcc $end
+$var wire 1 3 unknown $end
+$var tri1 1 4 devclrn $end
+$var tri1 1 5 devpor $end
+$var tri1 1 6 devoe $end
+$var wire 1 7 Result[0]~output_o $end
+$var wire 1 8 Result[1]~output_o $end
+$var wire 1 9 Result[2]~output_o $end
+$var wire 1 : Result[3]~output_o $end
+$var wire 1 ; Result[4]~output_o $end
+$var wire 1 < Result[5]~output_o $end
+$var wire 1 = Result[6]~output_o $end
+$var wire 1 > Result[7]~output_o $end
+$var wire 1 ? NZVC[0]~output_o $end
+$var wire 1 @ NZVC[1]~output_o $end
+$var wire 1 A NZVC[2]~output_o $end
+$var wire 1 B NZVC[3]~output_o $end
+$var wire 1 C ALU_Sel[1]~input_o $end
+$var wire 1 D B[0]~input_o $end
+$var wire 1 E A[0]~input_o $end
+$var wire 1 F Add0~0_combout $end
+$var wire 1 G ALU_Sel[2]~input_o $end
+$var wire 1 H A[1]~input_o $end
+$var wire 1 I Result_temp~1_combout $end
+$var wire 1 J Result_temp~2_combout $end
+$var wire 1 K ALU_Sel[0]~input_o $end
+$var wire 1 L Add1~0_combout $end
+$var wire 1 M Result_temp~0_combout $end
+$var wire 1 N Result_temp~3_combout $end
+$var wire 1 O B[1]~input_o $end
+$var wire 1 P Add1~1 $end
+$var wire 1 Q Add1~2_combout $end
+$var wire 1 R Add0~1 $end
+$var wire 1 S Add0~2_combout $end
+$var wire 1 T Result_temp~6_combout $end
+$var wire 1 U Result_temp~7_combout $end
+$var wire 1 V A[2]~input_o $end
+$var wire 1 W Result_temp~4_combout $end
+$var wire 1 X Result_temp~5_combout $end
+$var wire 1 Y Result_temp~8_combout $end
+$var wire 1 Z B[2]~input_o $end
+$var wire 1 [ Add0~3 $end
+$var wire 1 \ Add0~4_combout $end
+$var wire 1 ] Add1~3 $end
+$var wire 1 ^ Add1~4_combout $end
+$var wire 1 _ Result_temp~11_combout $end
+$var wire 1 ` Result_temp~12_combout $end
+$var wire 1 a A[3]~input_o $end
+$var wire 1 b Result_temp~9_combout $end
+$var wire 1 c Result_temp~10_combout $end
+$var wire 1 d Result_temp~13_combout $end
+$var wire 1 e B[3]~input_o $end
+$var wire 1 f Result_temp~37_combout $end
+$var wire 1 g A[4]~input_o $end
+$var wire 1 h Result_temp~38_combout $end
+$var wire 1 i Add1~5 $end
+$var wire 1 j Add1~6_combout $end
+$var wire 1 k Add0~5 $end
+$var wire 1 l Add0~6_combout $end
+$var wire 1 m Result_temp~14_combout $end
+$var wire 1 n Result_temp~15_combout $end
+$var wire 1 o Result_temp~16_combout $end
+$var wire 1 p B[4]~input_o $end
+$var wire 1 q Result_temp~35_combout $end
+$var wire 1 r A[5]~input_o $end
+$var wire 1 s Result_temp~36_combout $end
+$var wire 1 t Add0~7 $end
+$var wire 1 u Add0~8_combout $end
+$var wire 1 v Add1~7 $end
+$var wire 1 w Add1~8_combout $end
+$var wire 1 x Result_temp~17_combout $end
+$var wire 1 y Result_temp~18_combout $end
+$var wire 1 z Result_temp~19_combout $end
+$var wire 1 { B[5]~input_o $end
+$var wire 1 | Add1~9 $end
+$var wire 1 } Add1~10_combout $end
+$var wire 1 ~ Add0~9 $end
+$var wire 1 !! Add0~10_combout $end
+$var wire 1 "! Result_temp~20_combout $end
+$var wire 1 #! Result_temp~21_combout $end
+$var wire 1 $! A[6]~input_o $end
+$var wire 1 %! Result_temp~33_combout $end
+$var wire 1 &! Result_temp~34_combout $end
+$var wire 1 '! Result_temp~22_combout $end
+$var wire 1 (! B[6]~input_o $end
+$var wire 1 )! Result_temp~31_combout $end
+$var wire 1 *! A[7]~input_o $end
+$var wire 1 +! Result_temp~32_combout $end
+$var wire 1 ,! Add1~11 $end
+$var wire 1 -! Add1~12_combout $end
+$var wire 1 .! Add0~11 $end
+$var wire 1 /! Add0~12_combout $end
+$var wire 1 0! Result_temp~23_combout $end
+$var wire 1 1! Result_temp~24_combout $end
+$var wire 1 2! Result_temp~25_combout $end
+$var wire 1 3! B[7]~input_o $end
+$var wire 1 4! Add0~13 $end
+$var wire 1 5! Add0~14_combout $end
+$var wire 1 6! Add1~13 $end
+$var wire 1 7! Add1~14_combout $end
+$var wire 1 8! Result_temp~27_combout $end
+$var wire 1 9! Result_temp~26_combout $end
+$var wire 1 :! Result_temp~28_combout $end
+$var wire 1 ;! Result_temp~29_combout $end
+$var wire 1 <! Result_temp~30_combout $end
+$var wire 1 =! Add0~15 $end
+$var wire 1 >! Add0~16_combout $end
+$var wire 1 ?! Add1~15 $end
+$var wire 1 @! Add1~16_combout $end
+$var wire 1 A! NZVC~2_combout $end
+$var wire 1 B! NZVC~3_combout $end
+$var wire 1 C! NZVC~4_combout $end
+$var wire 1 D! NZVC~7_combout $end
+$var wire 1 E! NZVC~5_combout $end
+$var wire 1 F! NZVC~6_combout $end
+$var wire 1 G! NZVC~8_combout $end
+$var wire 1 H! NZVC~12_combout $end
+$var wire 1 I! NZVC~13_combout $end
+$var wire 1 J! NZVC~14_combout $end
+$var wire 1 K! NZVC~9_combout $end
+$var wire 1 L! NZVC~10_combout $end
+$var wire 1 M! NZVC~11_combout $end
+$var wire 1 N! NZVC~15_combout $end
+$var wire 1 O! NZVC~16_combout $end
+$var wire 1 P! NZVC~17_combout $end
+$var wire 1 Q! NZVC~18_combout $end
+$var wire 1 R! NZVC~19_combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1111000 !
+b0 "
+b110010 #
+0'
+1&
+0%
+1$
+0/
+1.
+0-
+1,
+0+
+1*
+0)
+1(
+x0
+01
+12
+x3
+14
+15
+16
+07
+18
+09
+1:
+0;
+1<
+0=
+1>
+0?
+1@
+0A
+1B
+0C
+0D
+0E
+0F
+0G
+0H
+0I
+0J
+0K
+0L
+0M
+0N
+1O
+1P
+1Q
+0R
+1S
+1T
+1U
+0V
+0W
+0X
+1Y
+0Z
+1[
+0\
+1]
+1^
+0_
+0`
+1a
+0b
+0c
+0d
+0e
+0f
+1g
+0h
+0i
+0j
+0k
+1l
+1m
+1n
+1o
+1p
+1q
+1r
+1s
+1t
+0u
+0v
+0w
+0x
+0y
+0z
+1{
+1|
+0}
+1~
+1!!
+1"!
+1#!
+1$!
+1%!
+1&!
+1'!
+0(!
+0)!
+0*!
+0+!
+0,!
+1-!
+0.!
+0/!
+00!
+01!
+02!
+03!
+14!
+15!
+16!
+07!
+18!
+09!
+1:!
+1;!
+1<!
+1=!
+0>!
+0?!
+0@!
+0A!
+0B!
+0C!
+1D!
+1E!
+0F!
+1G!
+0H!
+0I!
+0J!
+0K!
+0L!
+0M!
+0N!
+0O!
+0P!
+0Q!
+1R!
+$end
+#1000000
