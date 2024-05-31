@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/30/2024 17:45:17"
+-- DATE "05/30/2024 17:52:09"
 
 -- 
 -- Device: Altera EP3C16F484C6 Package FBGA484
@@ -36,9 +36,9 @@ ENTITY 	ALU_TEST IS
 	A : IN std_logic_vector(7 DOWNTO 0);
 	B : IN std_logic_vector(7 DOWNTO 0);
 	ALU_Sel : IN std_logic_vector(2 DOWNTO 0);
-	segments_0 : OUT std_logic_vector(6 DOWNTO 0);
-	segments_1 : OUT std_logic_vector(6 DOWNTO 0);
-	NZVC : OUT std_logic_vector(3 DOWNTO 0)
+	segments_0 : BUFFER std_logic_vector(6 DOWNTO 0);
+	segments_1 : BUFFER std_logic_vector(6 DOWNTO 0);
+	NZVC : BUFFER std_logic_vector(3 DOWNTO 0)
 	);
 END ALU_TEST;
 

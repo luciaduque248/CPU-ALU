@@ -34,7 +34,7 @@ begin
         );
 
     -- Instantiate the 7-segment display decoder for the upper nibble
-    display_upper : entity work.display7seg_hex
+    display_upper : entity work.display7seg_hex                                                                       
         port map (
             num => unsigned(Result(7 downto 4)),
             segments => segments_1
