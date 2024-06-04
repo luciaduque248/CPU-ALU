@@ -4,9 +4,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ALU is
     Port ( 
+		  --ENTRADAS
         A       : in  STD_LOGIC_VECTOR(7 downto 0);
         B       : in  STD_LOGIC_VECTOR(7 downto 0);
-        ALU_Sel : in  STD_LOGIC_VECTOR(2 downto 0);
+        ALU_Sel : in  STD_LOGIC_VECTOR(1 downto 0);
+		  
+		  --SALIDAS
         Result  : out STD_LOGIC_VECTOR(7 downto 0);
         NZVC    : out STD_LOGIC_VECTOR(3 downto 0)
     );

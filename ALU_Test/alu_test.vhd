@@ -6,7 +6,7 @@ entity ALU_TEST is
     Port (
         A          : in  std_logic_vector(7 downto 0);
         B          : in  std_logic_vector(7 downto 0);
-        ALU_Sel    : in  std_logic_vector(2 downto 0);
+        ALU_Sel    : in  std_logic_vector(1 downto 0);
         segments_0 : out std_logic_vector(6 downto 0); -- Display for lower nibble
         segments_1 : out std_logic_vector(6 downto 0); -- Display for upper nibble
         NZVC       : out std_logic_vector(3 downto 0)
